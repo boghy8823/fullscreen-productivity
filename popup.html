@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Fullscreen tool</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script   src="jquery-3.1.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Messages</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="home" role="tabpanel">
+    <p>Title:<span class="tab-title"></span></p>
+    <label>Url</label>
+    <input type="text" name="url" class="url-bar">
+  </div>
+  <div class="tab-pane" id="profile" role="tabpanel">..3.</div>
+  <div class="tab-pane" id="messages" role="tabpanel">.4..</div>
+  <div class="tab-pane" id="settings" role="tabpanel">.5..</div>
+</div>
+  </body>
+</html>
+

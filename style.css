@@ -1,0 +1,17 @@
+.nav-tabs{
+
+	width: 650px;
+}
+
+.url-bar{
+	width: 450px;
+    margin: 30px;
+}
+
+.tab-content{
+	padding:20px;
+}
+
+.tab-title{
+	font-weight: bold;
+}
