@@ -30,27 +30,43 @@ function openNewTab(url,callback){
   //chrome.windows.create(data, callback);
 }
 
+function getCurrentWindow(callback){
+  chrome.windows.getCurrent({populate: true}, callback);
+}
+
+function getAllTabsInWindow(windowId,callback){
+  chrome.tabs.getAllInWindow(windowId, callback);
+}
+
 chrome.commands.onCommand.addListener(function(command) {
         console.log('Command:', command);
       });
 
-
-document.addEventListener('onDomReady', function(){
-  getCurrentTabUrl(function(url) {
-    openNewTab(url, function(window) {
-      console.log("Tab Created");
-    }, function(errorMessage) {
-      console.log(errorMessage);
-    });
-  });
-})
+// document.addEventListener('onDomReady', function(){
+//   getCurrentTabUrl(function(url) {
+//     openNewTab(url, function(window) {
+//       console.log("Tab Created");
+//     }, function(errorMessage) {
+//       console.log(errorMessage);
+//     });
+//   });
+// })
 
 document.addEventListener('DOMContentLoaded', function() {
   getCurrentTabUrl(function(url) {
-    openNewTab(url, function(window) {
-      console.log("Tab Created");
-    }, function(errorMessage) {
+    // openNewTab(url, function(window) {
+    //   console.log("Tab Created", window);
+    // }, function(errorMessage) {
+    //   console.log(errorMessage);
+    // });
+    getCurrentWindow(function(window){
+     getAllTabsInWindow(window.id, function(tabs){
+      console.log("Tabs", tabs);
+     }, function(errorMessage){
       console.log(errorMessage);
-    });
+     })
+    }, function(errorMessage){
+      console.log(errorMessage);
+    })
   });
 });
